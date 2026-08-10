@@ -4,57 +4,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal page</title>
+
+```
+<title>Paolo Botticini</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                     Roboto, Helvetica, Arial, sans-serif;
+        color: #222;
+        background: #ffffff;
+        line-height: 1.7;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    header {
+        padding: 70px 0 40px 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+
+    .position {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #555;
+    }
+
+    nav {
+        margin-top: 35px;
+    }
+
+    nav a {
+        margin-right: 28px;
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+    }
+
+    nav a:hover {
+        color: #777;
+    }
+
+    section {
+        padding: 55px 0;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    h2 {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 35px;
+    }
+
+    .publication {
+        margin-bottom: 30px;
+    }
+
+    .publication-title {
+        font-weight: 600;
+    }
+
+    .publication a {
+        color: #2457a6;
+        text-decoration: none;
+    }
+
+    .publication a:hover {
+        text-decoration: underline;
+    }
+
+    details {
+        margin-top: 8px;
+        font-size: 15px;
+        color: #555;
+    }
+
+    summary {
+        cursor: pointer;
+        color: #2457a6;
+    }
+
+    footer {
+        padding: 35px 0;
+        color: #777;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: 34px;
+        }
+
+        .position {
+            font-size: 16px;
+        }
+    }
+</style>
+```
+
 </head>
 
 <body>
 
+<div class="container">
+
 ```
-<nav>
-    <a href="#home">Home</a>
-    <a href="#publications">Publications</a>
-    <a href="#contact">Contact</a>
-</nav>
+<header>
+    <h1>Paolo Botticini</h1>
+
+    <div class="position">
+        Postdoctoral Fellow<br>
+        Université Côte d'Azur · INPHYNI – CNRS
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
 
 <section id="home">
-    <h1>Welcome</h1>
-    <p>Welcome to my academic website.</p>
-    <p>Here you can find information about my research, publications, and academic activities.</p>
+    <h2>Home</h2>
+
+    <p>
+        Welcome to my personal academic page.
+    </p>
+
+    <p>
+        I am a Postdoctoral Fellow at Université Côte d'Azur,
+        working at INPHYNI – CNRS.
+    </p>
 </section>
+
 
 <section id="publications">
-    <h1>Publications</h1>
 
-    <h2>Published</h2>
+    <h2>Publications</h2>
 
-    <p>
-    <strong>[1] Compressibility-induced destabilisation of falling liquid films: an integral approach.</strong><br>
-    P. Botticini, G. Lavalle, D. Picchi &amp; P. Poesio<br>
-    <em>International Journal of Multiphase Flow</em> 171: 104667 (2024)
-    [<a href="https://doi.org/10.1016/j.ijmultiphaseflow.2023.104667">Publisher</a>]
-    [<a href="compressibility-induced-destabilisation.pdf">PDF</a>]
-    <details>
-    <summary>[Show Abstract]</summary>
-    <p>
-        We revisit the classical 2D problem of a gravity-driven liquid layer down an inclined plate (Kapitza, 1948), relaxing the usual assumption of homogeneous fluid. We set out to answer three major issues. When the fluid density is allowed to vary, (i) how does this feature structurally affect the formulation of a low-dimensional depth-averaged model? (ii) To what extent and (iii) by virtue of which physical mechanism does compressibility participate in the long-wave interfacial instability? To provide the relevant answers, (i) we first make use of a second-order asymptotic expansion in the shallowness parameter to develop a weakly-compressible boundary-layer system: starting from a two-equation momentum-integrated model, an additional barotropic equation of state is required for closure purposes. In this respect, (ii) a temporal linear stability analysis is performed: it is revealed that compressibility plays a destabilising role whose magnitude is enhanced at intermediately tilted configurations, and the more the Reynolds number approaches the critical threshold in the incompressible limit. (iii) We finally interpret the ensuing dispersion relation under the convenient framework of two-wave hierarchy, initiated by Whitham (1974): the primary instability gets promoted by the flow compressibility as it contributes to deceleration of dynamic waves most significantly in the low-inertia regime. Indeed, compressibility locally acts as a further boost to the inertia-based mechanism of Kapitza instability by amplifying flow-rate variations within the liquid film.
-    </p>
-    </details>
+    <h3>Submitted</h3>
 
-    </p>
+    <div class="publication">
+        <!-- Submitted publications will go here -->
+    </div>
 
-    <h2>Publication Title</h2>
-    <p>Author Name, Journal or Conference, Year.</p>
 
-    <h2>Another Publication</h2>
-    <p>Author Name, Journal or Conference, Year.</p>
+    <h3>Published</h3>
+
+    <div class="publication">
+
+        <div class="publication-title">
+            [1] Compressibility-induced destabilisation of falling liquid films:
+            an integral approach.
+        </div>
+
+        P. Botticini, G. Lavalle, D. Picchi &amp; P. Poesio<br>
+
+        <em>
+            International Journal of Multiphase Flow
+        </em>
+        171: 104667 (2024)
+
+        [
+        <a href="https://doi.org/10.1016/j.ijmultiphaseflow.2023.104667">
+            Publisher
+        </a>
+        ]
+        [
+        <a href="compressibility-induced-destabilisation.pdf">
+            PDF
+        </a>
+        ]
+
+        <details>
+            <summary>Show Abstract</summary>
+
+            <p>
+                We revisit the classical 2D problem of a gravity-driven
+                liquid layer down an inclined plate, relaxing the usual
+                assumption of homogeneous fluid. 
+            </p>
+
+        </details>
+
+    </div>
+
+
+    <h3>PhD Thesis</h3>
+
+    <div class="publication">
+        <!-- PhD thesis will go here -->
+    </div>
+
+
+    <h3>MSc Thesis</h3>
+
+    <div class="publication">
+        <!-- MSc thesis will go here -->
+    </div>
+
 </section>
+
 
 <section id="contact">
-    <h1>Contact</h1>
-    <p>Email: your.email@example.com</p>
-    <p>University: Your University</p>
+
+    <h2>Contact</h2>
+
+    <p>
+        Email: <a href="mailto:your.email@example.com">
+            your.email@example.com
+        </a>
+    </p>
+
+    <p>
+        Université Côte d'Azur<br>
+        INPHYNI – CNRS
+    </p>
+
 </section>
+
+
+<footer>
+    © 2026 Paolo Botticini
+</footer>
 ```
+
+</div>
 
 </body>
 </html>
