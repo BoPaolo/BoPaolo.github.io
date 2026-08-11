@@ -1,256 +1,1028 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>[Nome Cognome] — Academic Profile</title>
 
-<title>Paolo Botticini</title>
+  <meta name="description"
+        content="Academic website of [Nome Cognome], researcher in [Area di ricerca].">
 
-<style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8f8f6;
+      --surface: #ffffff;
+      --text: #202124;
+      --muted: #6b6d70;
+      --accent: #385b72;
+      --accent-light: #e8eef2;
+      --border: #e2e2df;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                     Roboto, Helvetica, Arial, sans-serif;
-        color: #222;
-        background: #ffffff;
-        line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 30px;
+      width: min(90%, var(--max-width));
+      margin: auto;
     }
 
-    header {
-        padding: 70px 0 40px 0;
-        border-bottom: 1px solid #e5e5e5;
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 42px;
-        font-weight: 600;
-        letter-spacing: -1px;
-    }
-
-    .position {
-        margin-top: 10px;
-        font-size: 18px;
-        color: #555;
-    }
+    /* =========================
+       NAVBAR
+    ========================= */
 
     nav {
-        margin-top: 35px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 248, 246, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
-    nav a {
-        margin-right: 28px;
-        text-decoration: none;
-        color: #333;
-        font-size: 16px;
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    nav a:hover {
-        color: #777;
+    .logo {
+      font-family: "Libre Baskerville", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
     }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 780px;
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Libre Baskerville", serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 20px;
+      border: 1px solid var(--accent);
+      border-radius: 5px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button.primary:hover {
+      background: #2b4759;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
 
     section {
-        padding: 55px 0;
-        border-bottom: 1px solid #eeeeee;
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    h2 {
-        font-size: 28px;
-        font-weight: 500;
-        margin-bottom: 30px;
+    .section-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 70px;
     }
 
-    h3 {
-        font-size: 20px;
-        font-weight: 500;
-        margin-top: 35px;
+    .section-title {
+      font-family: "Libre Baskerville", serif;
+      font-size: 1.5rem;
+      font-weight: 400;
     }
+
+    .section-label {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 8px;
+    }
+
+    .content {
+      max-width: 720px;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       RESEARCH
+    ========================= */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .research-card {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: transform 0.2s ease,
+                  box-shadow 0.2s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .research-card h3 {
+      font-family: "Libre Baskerville", serif;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .research-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* =========================
+       PUBLICATIONS
+    ========================= */
 
     .publication {
-        margin-bottom: 30px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication:first-child {
+      padding-top: 0;
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .publication-year {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 5px;
     }
 
     .publication-title {
-        font-weight: 600;
+      font-family: "Libre Baskerville", serif;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      margin-bottom: 6px;
     }
 
-    .publication a {
-        color: #2457a6;
-        text-decoration: none;
+    .publication-authors {
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    .publication a:hover {
-        text-decoration: underline;
+    .publication-journal {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-style: italic;
+      margin-top: 3px;
     }
 
-    details {
-        margin-top: 8px;
-        font-size: 15px;
-        color: #555;
+    .publication-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+      font-size: 0.82rem;
     }
 
-    summary {
-        cursor: pointer;
-        color: #2457a6;
+    .publication-links a {
+      color: var(--accent);
     }
+
+    .publication-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .project {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 25px;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project:last-child {
+      border-bottom: none;
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    .project h3 {
+      font-family: "Libre Baskerville", serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 7px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      margin-bottom: 35px;
+    }
+
+    .experience:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 5px;
+    }
+
+    .experience h3 {
+      font-family: "Libre Baskerville", serif;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .experience-date {
+      color: var(--muted);
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .experience p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .contact-link {
+      padding: 9px 15px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 5px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: all 0.2s ease;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-        padding: 35px 0;
-        color: #777;
-        font-size: 14px;
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 0.8rem;
     }
 
-    @media (max-width: 600px) {
-        .container {
-            padding: 0 20px;
-        }
-
-        header h1 {
-            font-size: 34px;
-        }
-
-        .position {
-            font-size: 16px;
-        }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
-</style>
-```
 
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 750px) {
+
+      .nav-inner {
+        height: auto;
+        padding: 18px 0;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 90px 0;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        grid-template-columns: 55px 1fr;
+        gap: 15px;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      footer .container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .nav-links {
+        font-size: 0.78rem;
+        gap: 8px;
+      }
+
+      h1 {
+        font-size: 2.7rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
-<div class="container">
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
-```
-<header>
-    <h1>Paolo Botticini</h1>
+  <nav>
+    <div class="container nav-inner">
 
-    <div class="position">
-        Postdoctoral Fellow<br>
-        Université Côte d'Azur · INPHYNI – CNRS
+      <a href="#" class="logo">
+        [N.C.]
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
     </div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+  </nav>
 
 
-<section id="home">
-    <h2>Home</h2>
+  <!-- =========================
+       HERO
+  ========================= -->
 
-    <p>
-        Welcome to my personal academic page.
-    </p>
+  <header class="hero">
 
-    <p>
-        I am a Postdoctoral Fellow at Université Côte d'Azur,
-        working at INPHYNI – CNRS.
-    </p>
-</section>
+    <div class="container">
 
+      <div class="hero-content">
 
-<section id="publications">
-
-    <h2>Publications</h2>
-
-    <h3>Submitted</h3>
-
-    <div class="publication">
-        <!-- Submitted publications will go here -->
-    </div>
-
-
-    <h3>Published</h3>
-
-    <div class="publication">
-
-        <div class="publication-title">
-            [1] Compressibility-induced destabilisation of falling liquid films:
-            an integral approach.
+        <div class="eyebrow">
+          Researcher · PhD Candidate · Academic
         </div>
 
-        P. Botticini, G. Lavalle, D. Picchi &amp; P. Poesio<br>
+        <h1>
+          [Nome<br>
+          Cognome]
+        </h1>
 
-        <em>
-            International Journal of Multiphase Flow
-        </em>
-        171: 104667 (2024)
+        <p>
+          PhD candidate in [Disciplina] at [Università].
+          My research focuses on [breve descrizione della tua
+          ricerca e dei tuoi interessi accademici].
+        </p>
 
-        [
-        <a href="https://doi.org/10.1016/j.ijmultiphaseflow.2023.104667">
-            Publisher
-        </a>
-        ]
-        [
-        <a href="compressibility-induced-destabilisation.pdf">
-            PDF
-        </a>
-        ]
+        <div class="hero-buttons">
 
-        <details>
-            <summary>Show Abstract</summary>
+          <a href="#research" class="button primary">
+            Research
+          </a>
+
+          <a href="cv.pdf" class="button" target="_blank">
+            Download CV
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section id="about">
+
+    <div class="container section-grid">
+
+      <div>
+        <h2 class="section-title">About</h2>
+        <div class="section-label">Profile</div>
+      </div>
+
+      <div class="content">
+
+        <p>
+          Sono [Nome Cognome], [ruolo accademico] presso
+          [Università / Dipartimento].
+        </p>
+
+        <p>
+          Il mio lavoro si concentra su [area principale].
+          Sono particolarmente interessato/a a [tema 1],
+          [tema 2] e [tema 3].
+        </p>
+
+        <p>
+          Attualmente sto lavorando a [descrizione breve del
+          progetto o della tesi].
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RESEARCH
+  ========================= -->
+
+  <section id="research">
+
+    <div class="container section-grid">
+
+      <div>
+        <h2 class="section-title">Research</h2>
+        <div class="section-label">Areas of interest</div>
+      </div>
+
+      <div class="content">
+
+        <div class="research-grid">
+
+          <article class="research-card">
+
+            <h3>Research Area I</h3>
 
             <p>
-                We revisit the classical 2D problem of a gravity-driven
-                liquid layer down an inclined plate, relaxing the usual
-                assumption of homogeneous fluid. 
+              Breve descrizione dell'area di ricerca e delle
+              principali domande scientifiche.
             </p>
 
-        </details>
+          </article>
+
+
+          <article class="research-card">
+
+            <h3>Research Area II</h3>
+
+            <p>
+              Breve descrizione dell'area di ricerca e dei
+              problemi affrontati.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <h3>Research Area III</h3>
+
+            <p>
+              Metodi, teorie o tematiche specifiche su cui
+              lavori.
+            </p>
+
+          </article>
+
+
+          <article class="research-card">
+
+            <h3>Research Area IV</h3>
+
+            <p>
+              Un'altra area di interesse accademico.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
 
     </div>
 
+  </section>
 
-    <h3>PhD Thesis</h3>
 
-    <div class="publication">
-        <!-- PhD thesis will go here -->
+  <!-- =========================
+       PUBLICATIONS
+  ========================= -->
+
+  <section id="publications">
+
+    <div class="container section-grid">
+
+      <div>
+        <h2 class="section-title">Publications</h2>
+        <div class="section-label">Selected work</div>
+      </div>
+
+      <div class="content">
+
+
+        <article class="publication">
+
+          <div class="publication-year">
+            2026
+          </div>
+
+          <div class="publication-title">
+            [Titolo del paper o articolo]
+          </div>
+
+          <div class="publication-authors">
+            [Nome Cognome], [Co-autore]
+          </div>
+
+          <div class="publication-journal">
+            [Journal / Conference]
+          </div>
+
+          <div class="publication-links">
+            <a href="#" target="_blank">Paper</a>
+            <a href="#" target="_blank">DOI</a>
+          </div>
+
+        </article>
+
+
+        <article class="publication">
+
+          <div class="publication-year">
+            2025
+          </div>
+
+          <div class="publication-title">
+            [Titolo del secondo lavoro]
+          </div>
+
+          <div class="publication-authors">
+            [Nome Cognome], [Co-autore]
+          </div>
+
+          <div class="publication-journal">
+            [Journal / Conference]
+          </div>
+
+          <div class="publication-links">
+            <a href="#" target="_blank">Paper</a>
+            <a href="#" target="_blank">DOI</a>
+          </div>
+
+        </article>
+
+
+        <article class="publication">
+
+          <div class="publication-year">
+            2024
+          </div>
+
+          <div class="publication-title">
+            [Titolo del terzo lavoro]
+          </div>
+
+          <div class="publication-authors">
+            [Nome Cognome], [Co-autore]
+          </div>
+
+          <div class="publication-journal">
+            [Journal / Conference]
+          </div>
+
+          <div class="publication-links">
+            <a href="#" target="_blank">Paper</a>
+            <a href="#" target="_blank">DOI</a>
+          </div>
+
+        </article>
+
+
+      </div>
+
     </div>
 
+  </section>
 
-    <h3>MSc Thesis</h3>
 
-    <div class="publication">
-        <!-- MSc thesis will go here -->
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
+  <section id="projects">
+
+    <div class="container section-grid">
+
+      <div>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-label">Selected projects</div>
+      </div>
+
+      <div class="content">
+
+
+        <article class="project">
+
+          <div class="project-number">
+            01
+          </div>
+
+          <div>
+
+            <h3>
+              [Nome del progetto]
+            </h3>
+
+            <p>
+              Descrizione sintetica del progetto, degli obiettivi
+              e del tuo contributo.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="project">
+
+          <div class="project-number">
+            02
+          </div>
+
+          <div>
+
+            <h3>
+              [Secondo progetto]
+            </h3>
+
+            <p>
+              Breve descrizione del progetto e delle attività
+              svolte.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="project">
+
+          <div class="project-number">
+            03
+          </div>
+
+          <div>
+
+            <h3>
+              [Terzo progetto]
+            </h3>
+
+            <p>
+              Breve descrizione del progetto.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
     </div>
 
-</section>
+  </section>
 
 
-<section id="contact">
+  <!-- =========================
+       EXPERIENCE
+  ========================= -->
 
-    <h2>Contact</h2>
+  <section>
 
-    <p>
-        Email: <a href="mailto:your.email@example.com">
-            your.email@example.com
-        </a>
-    </p>
+    <div class="container section-grid">
 
-    <p>
-        Université Côte d'Azur<br>
-        INPHYNI – CNRS
-    </p>
+      <div>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-label">Academic background</div>
+      </div>
 
-</section>
+      <div class="content">
 
 
-<footer>
-    © 2026 Paolo Botticini
-</footer>
-</div>
+        <div class="experience">
+
+          <div class="experience-header">
+
+            <h3>
+              [PhD / Posizione]
+            </h3>
+
+            <span class="experience-date">
+              2024 — Present
+            </span>
+
+          </div>
+
+          <p>
+            [Università], [Dipartimento]
+          </p>
+
+        </div>
+
+
+        <div class="experience">
+
+          <div class="experience-header">
+
+            <h3>
+              [Master's Degree]
+            </h3>
+
+            <span class="experience-date">
+              2022 — 2024
+            </span>
+
+          </div>
+
+          <p>
+            [Università], [Corso di laurea]
+          </p>
+
+        </div>
+
+
+        <div class="experience">
+
+          <div class="experience-header">
+
+            <h3>
+              [Bachelor's Degree]
+            </h3>
+
+            <span class="experience-date">
+              2019 — 2022
+            </span>
+
+          </div>
+
+          <p>
+            [Università], [Corso di laurea]
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section id="contact">
+
+    <div class="container section-grid">
+
+      <div>
+        <h2 class="section-title">Contact</h2>
+        <div class="section-label">Get in touch</div>
+      </div>
+
+      <div class="content">
+
+        <p>
+          Per collaborazioni, domande sulla ricerca o
+          opportunità accademiche, puoi contattarmi tramite
+          email o attraverso i miei profili.
+        </p>
+
+        <div class="contact-list">
+
+          <a
+            class="contact-link"
+            href="mailto:nome@universita.it">
+            Email
+          </a>
+
+          <a
+            class="contact-link"
+            href="#"
+            target="_blank">
+            Google Scholar
+          </a>
+
+          <a
+            class="contact-link"
+            href="#"
+            target="_blank">
+            ORCID
+          </a>
+
+          <a
+            class="contact-link"
+            href="#"
+            target="_blank">
+            GitHub
+          </a>
+
+          <a
+            class="contact-link"
+            href="#"
+            target="_blank">
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <span>
+        © 2026 [Nome Cognome]
+      </span>
+
+      <span>
+        Academic Website
+      </span>
+
+    </div>
+
+  </footer>
+
 
 </body>
 </html>
