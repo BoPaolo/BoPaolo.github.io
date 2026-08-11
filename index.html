@@ -1,24 +1,25 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nome Cognome | Fluid Mechanics</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nome Cognome — Academic Website</title>
 
     <style>
 
         /* =====================================================
-           GENERAL
+           RESET
         ===================================================== */
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -27,11 +28,17 @@
 
         body {
             background: #ffffff;
-            color: #222222;
+            color: #252525;
 
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
 
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.65;
         }
 
         a {
@@ -41,32 +48,26 @@
 
 
         /* =====================================================
-           TOP NAVIGATION BAR
+           NAVIGATION
         ===================================================== */
 
         .navbar {
             position: sticky;
             top: 0;
+            z-index: 100;
 
-            z-index: 1000;
+            height: 60px;
 
-            height: 64px;
+            background: rgba(255, 255, 255, 0.96);
 
-            background: #ffffff;
-
-            border-bottom: 1px solid #e5e5e5;
-
-            display: flex;
-            align-items: center;
+            border-bottom: 1px solid #e8e8e8;
         }
 
         .navbar-inner {
-            width: 100%;
+            max-width: 1180px;
+            height: 100%;
 
-            max-width: 1200px;
-
-            margin: 0 auto;
-
+            margin: auto;
             padding: 0 30px;
 
             display: flex;
@@ -74,43 +75,42 @@
             justify-content: space-between;
         }
 
-        .navbar-name {
-            font-family: Georgia, serif;
+        .site-name {
+            font-family: Georgia, "Times New Roman", serif;
 
-            font-size: 18px;
-
-            color: #222222;
+            font-size: 17px;
+            font-weight: normal;
         }
 
-        .nav-links {
+        .navigation {
             display: flex;
 
-            gap: 35px;
+            gap: 32px;
 
             list-style: none;
 
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        .nav-links a {
-            color: #555555;
+        .navigation a {
+            color: #666;
 
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover {
-            color: #000000;
+        .navigation a:hover {
+            color: #111;
         }
 
 
         /* =====================================================
-           MAIN LAYOUT
+           PAGE
         ===================================================== */
 
         .page {
-            max-width: 1200px;
+            max-width: 1180px;
 
-            margin: 0 auto;
+            margin: auto;
 
             padding: 70px 30px 100px;
         }
@@ -120,163 +120,173 @@
            HOME
         ===================================================== */
 
-        .home-layout {
-
+        .home {
             display: grid;
 
-            grid-template-columns: 270px 1fr;
+            grid-template-columns: 260px minmax(0, 720px);
 
-            gap: 80px;
+            column-gap: 90px;
 
             align-items: start;
         }
 
 
         /* =====================================================
-           LEFT SIDEBAR
+           SIDEBAR
         ===================================================== */
 
-        .sidebar {
+        .profile {
             position: sticky;
-
             top: 100px;
         }
 
         .profile-name {
-            font-family: Georgia, serif;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-            font-size: 30px;
+            font-size: 29px;
 
             font-weight: normal;
 
-            line-height: 1.2;
+            line-height: 1.25;
 
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .profile-role {
-            color: #555555;
+        .profile-position {
+            color: #555;
 
-            font-size: 15px;
+            font-size: 14px;
 
-            margin-bottom: 25px;
+            line-height: 1.55;
+
+            margin-bottom: 24px;
         }
 
-        .profile-info {
+        .affiliation {
             display: flex;
 
-            align-items: center;
+            align-items: flex-start;
 
-            gap: 10px;
+            gap: 9px;
 
-            color: #666666;
+            color: #777;
 
-            font-size: 13px;
+            font-size: 12.5px;
+
+            line-height: 1.5;
         }
 
-        /*
-           Simple academic/building icon
-        */
+        .affiliation-icon {
+            width: 22px;
+            height: 22px;
 
-        .profile-icon {
-            width: 25px;
-            height: 25px;
+            flex: 0 0 22px;
 
-            border: 1px solid #cccccc;
+            border: 1px solid #cfcfcf;
 
             border-radius: 50%;
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            font-size: 12px;
+            color: #777;
 
-            color: #555555;
+            font-size: 11px;
         }
 
 
         /* =====================================================
-           MAIN HOME CONTENT
+           HOME CONTENT
         ===================================================== */
 
         .home-content {
-            max-width: 720px;
+            padding-top: 4px;
         }
 
         .welcome {
-            font-family: Georgia, serif;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-            font-size: 42px;
+            font-size: 38px;
 
             font-weight: normal;
 
-            line-height: 1.2;
+            line-height: 1.25;
 
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .home-content p {
-            color: #555555;
+            max-width: 680px;
 
-            font-size: 16px;
+            color: #555;
 
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
 
         /* =====================================================
-           SECTION
+           SECTIONS
         ===================================================== */
 
         .section {
-            margin-top: 120px;
+            margin-top: 115px;
 
             scroll-margin-top: 90px;
         }
 
-        .section-title {
-            font-family: Georgia, serif;
+        .section-heading {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
-            font-size: 30px;
+            font-size: 29px;
 
             font-weight: normal;
 
-            margin-bottom: 45px;
+            padding-bottom: 13px;
 
-            padding-bottom: 12px;
+            margin-bottom: 42px;
 
             border-bottom: 1px solid #e5e5e5;
         }
 
 
         /* =====================================================
-           PUBLICATIONS
+           PUBLICATION CATEGORY
         ===================================================== */
 
         .publication-category {
-            margin-bottom: 55px;
+            margin-bottom: 48px;
         }
 
-        .category-title {
-            font-size: 18px;
+        .category-heading {
+            font-size: 16px;
 
-            font-weight: normal;
+            font-weight: 500;
 
-            color: #333333;
+            color: #333;
 
             margin-bottom: 25px;
         }
 
 
-        /* Individual publication */
+        /* =====================================================
+           PUBLICATION
+        ===================================================== */
 
         .publication {
-            padding: 0 0 28px;
+            padding-bottom: 25px;
 
-            margin-bottom: 28px;
+            margin-bottom: 25px;
 
             border-bottom: 1px solid #eeeeee;
         }
@@ -286,84 +296,84 @@
         }
 
         .publication-title {
-            font-family: Georgia, serif;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
             font-size: 16px;
 
+            font-weight: normal;
+
             line-height: 1.5;
 
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .publication-authors {
-            color: #555555;
+            color: #555;
 
-            font-size: 14px;
+            font-size: 13.5px;
 
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
-        .publication-journal {
-            color: #777777;
+        .publication-venue {
+            color: #777;
 
-            font-size: 14px;
+            font-size: 13px;
 
             font-style: italic;
 
-            margin-bottom: 12px;
+            margin-bottom: 11px;
         }
 
 
         /* =====================================================
-           PUBLICATION BUTTONS
+           PUBLICATION LINKS
         ===================================================== */
 
         .publication-links {
             display: flex;
 
-            gap: 18px;
-
             align-items: center;
 
-            flex-wrap: wrap;
+            gap: 16px;
+
+            font-size: 12.5px;
         }
 
         .publication-links a,
-        .abstract-button {
-
-            background: none;
+        .abstract-toggle {
 
             border: none;
 
+            background: none;
+
             padding: 0;
+
+            color: #555;
 
             font-family: inherit;
 
-            font-size: 13px;
-
-            color: #555555;
+            font-size: 12.5px;
 
             cursor: pointer;
-
-            transition: color 0.2s ease;
         }
 
         .publication-links a:hover,
-        .abstract-button:hover {
-
-            color: #000000;
+        .abstract-toggle:hover {
+            color: #000;
 
             text-decoration: underline;
         }
 
-
-        /* Download icon */
-
         .download-icon {
-
-            font-size: 13px;
+            display: inline-block;
 
             margin-right: 3px;
+
+            font-size: 13px;
         }
 
 
@@ -372,60 +382,67 @@
         ===================================================== */
 
         .abstract {
-
             display: none;
 
-            margin-top: 18px;
+            margin-top: 17px;
 
-            padding: 18px 20px;
+            padding: 16px 18px;
 
-            background: #f8f8f8;
+            background: #fafafa;
 
-            border-left: 3px solid #cccccc;
+            border-left: 2px solid #c8c8c8;
 
-            color: #555555;
+            color: #5c5c5c;
 
-            font-size: 14px;
+            font-size: 13px;
 
             line-height: 1.7;
         }
 
-        .abstract.open {
+        .abstract.visible {
             display: block;
+        }
+
+        .abstract-label {
+            color: #333;
+
+            font-weight: 600;
         }
 
 
         /* =====================================================
-           CONTACTS
+           CONTACT
         ===================================================== */
 
-        .contact-content {
+        .contact {
             max-width: 650px;
         }
 
-        .contact-content p {
-            color: #555555;
+        .contact p {
+            color: #555;
 
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
-        .contact-list {
-            list-style: none;
+        .contact-item {
+            margin-bottom: 9px;
+
+            font-size: 13.5px;
+
+            color: #555;
         }
 
-        .contact-list li {
-            margin-bottom: 10px;
+        .contact-item strong {
+            color: #333;
 
-            color: #555555;
-
-            font-size: 14px;
+            font-weight: 500;
         }
 
-        .contact-list a {
-            color: #333333;
+        .contact-item a {
+            color: #444;
         }
 
-        .contact-list a:hover {
+        .contact-item a:hover {
             text-decoration: underline;
         }
 
@@ -435,18 +452,17 @@
         ===================================================== */
 
         footer {
+            max-width: 1180px;
 
-            max-width: 1200px;
+            margin: auto;
 
-            margin: 0 auto;
+            padding: 28px 30px;
 
-            padding: 30px;
+            border-top: 1px solid #e8e8e8;
 
-            border-top: 1px solid #e5e5e5;
+            color: #999;
 
-            color: #999999;
-
-            font-size: 12px;
+            font-size: 11.5px;
         }
 
 
@@ -454,48 +470,54 @@
            MOBILE
         ===================================================== */
 
-        @media (max-width: 750px) {
+        @media (max-width: 760px) {
 
             .navbar-inner {
                 padding: 0 20px;
             }
 
-            .navbar-name {
+            .site-name {
                 display: none;
             }
 
-            .nav-links {
+            .navigation {
                 width: 100%;
 
                 justify-content: center;
 
-                gap: 25px;
+                gap: 27px;
             }
 
             .page {
                 padding: 50px 20px 80px;
             }
 
-            .home-layout {
+            .home {
                 grid-template-columns: 1fr;
 
-                gap: 50px;
+                row-gap: 50px;
             }
 
-            .sidebar {
+            .profile {
                 position: static;
             }
 
             .welcome {
-                font-size: 34px;
+                font-size: 32px;
             }
 
             .section {
-                margin-top: 90px;
+                margin-top: 85px;
             }
 
-            .section-title {
+            .section-heading {
                 font-size: 26px;
+
+                margin-bottom: 35px;
+            }
+
+            footer {
+                padding: 25px 20px;
             }
         }
 
@@ -508,18 +530,18 @@
 
 
     <!-- =====================================================
-         NAVIGATION
+         NAVIGATION BAR
     ===================================================== -->
 
     <nav class="navbar">
 
         <div class="navbar-inner">
 
-            <a href="#home" class="navbar-name">
+            <a href="#home" class="site-name">
                 Nome Cognome
             </a>
 
-            <ul class="nav-links">
+            <ul class="navigation">
 
                 <li>
                     <a href="#home">
@@ -534,7 +556,7 @@
                 </li>
 
                 <li>
-                    <a href="#contact">
+                    <a href="#contacts">
                         Contacts
                     </a>
                 </li>
@@ -556,31 +578,31 @@
 
         <section id="home">
 
-            <div class="home-layout">
+            <div class="home">
 
 
                 <!-- LEFT COLUMN -->
 
-                <aside class="sidebar">
+                <aside class="profile">
 
                     <h1 class="profile-name">
                         Nome Cognome
                     </h1>
 
-                    <p class="profile-role">
+                    <p class="profile-position">
                         Postdoctoral Fellow<br>
                         in Fluid Mechanics
                     </p>
 
+                    <div class="affiliation">
 
-                    <div class="profile-info">
-
-                        <div class="profile-icon">
-                            ♢
+                        <div class="affiliation-icon">
+                            ◇
                         </div>
 
                         <span>
-                            Department of Mechanical Engineering
+                            Department of Mechanical Engineering<br>
+                            University of Example
                         </span>
 
                     </div>
@@ -602,15 +624,15 @@
                     </p>
 
                     <p>
-                        My research interests include fluid dynamics,
+                        My research focuses on fluid dynamics,
                         turbulence, computational fluid dynamics,
                         and numerical methods for complex flows.
                     </p>
 
                     <p>
-                        On this website you can find information about
-                        my research activities, publications, and
-                        academic background.
+                        This website contains information about my
+                        research activities, publications, and
+                        academic work.
                     </p>
 
                 </div>
@@ -627,7 +649,7 @@
 
         <section id="publications" class="section">
 
-            <h2 class="section-title">
+            <h2 class="section-heading">
                 Publications
             </h2>
 
@@ -638,12 +660,10 @@
 
             <div class="publication-category">
 
-                <h3 class="category-title">
+                <h3 class="category-heading">
                     Submitted manuscripts
                 </h3>
 
-
-                <!-- PUBLICATION 1 -->
 
                 <article class="publication">
 
@@ -656,18 +676,18 @@
                         Nome Cognome, A. Researcher, B. Scientist
                     </p>
 
-                    <p class="publication-journal">
+                    <p class="publication-venue">
                         Submitted to Journal of Fluid Mechanics
                     </p>
 
-
                     <div class="publication-links">
 
-                        <a href="#">
+                        <a href="#"
+                           target="_blank">
                             [Publisher]
                         </a>
 
-                        <a href="papers/example-paper.pdf"
+                        <a href="papers/paper-01.pdf"
                            target="_blank">
 
                             <span class="download-icon">
@@ -679,8 +699,8 @@
                         </a>
 
                         <button
-                            class="abstract-button"
-                            onclick="toggleAbstract('abstract1')">
+                            class="abstract-toggle"
+                            onclick="toggleAbstract(this)">
 
                             [Show Abstract]
 
@@ -688,10 +708,11 @@
 
                     </div>
 
+                    <div class="abstract">
 
-                    <div id="abstract1" class="abstract">
-
-                        <strong>Abstract.</strong>
+                        <span class="abstract-label">
+                            Abstract.
+                        </span>
 
                         We investigate the dynamics of turbulent
                         flows developing in complex geometries using
@@ -706,7 +727,6 @@
 
                 </article>
 
-
             </div>
 
 
@@ -717,12 +737,10 @@
 
             <div class="publication-category">
 
-                <h3 class="category-title">
+                <h3 class="category-heading">
                     Journal publications
                 </h3>
 
-
-                <!-- PUBLICATION 2 -->
 
                 <article class="publication">
 
@@ -735,19 +753,19 @@
                         Nome Cognome, C. Author, D. Researcher
                     </p>
 
-                    <p class="publication-journal">
+                    <p class="publication-venue">
                         Journal of Computational Physics,
-                        Vol. 512, 2025
+                        512, 2025
                     </p>
-
 
                     <div class="publication-links">
 
-                        <a href="#">
+                        <a href="#"
+                           target="_blank">
                             [Publisher]
                         </a>
 
-                        <a href="papers/example-paper-2.pdf"
+                        <a href="papers/paper-02.pdf"
                            target="_blank">
 
                             <span class="download-icon">
@@ -759,8 +777,8 @@
                         </a>
 
                         <button
-                            class="abstract-button"
-                            onclick="toggleAbstract('abstract2')">
+                            class="abstract-toggle"
+                            onclick="toggleAbstract(this)">
 
                             [Show Abstract]
 
@@ -768,10 +786,11 @@
 
                     </div>
 
+                    <div class="abstract">
 
-                    <div id="abstract2" class="abstract">
-
-                        <strong>Abstract.</strong>
+                        <span class="abstract-label">
+                            Abstract.
+                        </span>
 
                         This paper presents a combined experimental
                         and numerical investigation of vortex
@@ -788,8 +807,6 @@
 
 
 
-                <!-- PUBLICATION 3 -->
-
                 <article class="publication">
 
                     <h4 class="publication-title">
@@ -801,18 +818,18 @@
                         Nome Cognome, E. Author
                     </p>
 
-                    <p class="publication-journal">
-                        Physics of Fluids, Vol. 37, 2025
+                    <p class="publication-venue">
+                        Physics of Fluids, 37, 2025
                     </p>
-
 
                     <div class="publication-links">
 
-                        <a href="#">
+                        <a href="#"
+                           target="_blank">
                             [Publisher]
                         </a>
 
-                        <a href="papers/example-paper-3.pdf"
+                        <a href="papers/paper-03.pdf"
                            target="_blank">
 
                             <span class="download-icon">
@@ -824,8 +841,8 @@
                         </a>
 
                         <button
-                            class="abstract-button"
-                            onclick="toggleAbstract('abstract3')">
+                            class="abstract-toggle"
+                            onclick="toggleAbstract(this)">
 
                             [Show Abstract]
 
@@ -833,10 +850,11 @@
 
                     </div>
 
+                    <div class="abstract">
 
-                    <div id="abstract3" class="abstract">
-
-                        <strong>Abstract.</strong>
+                        <span class="abstract-label">
+                            Abstract.
+                        </span>
 
                         A reduced-order modelling framework is
                         introduced for the efficient prediction of
@@ -849,7 +867,6 @@
 
                 </article>
 
-
             </div>
 
 
@@ -860,12 +877,10 @@
 
             <div class="publication-category">
 
-                <h3 class="category-title">
+                <h3 class="category-heading">
                     Other
                 </h3>
 
-
-                <!-- PUBLICATION 4 -->
 
                 <article class="publication">
 
@@ -878,18 +893,18 @@
                         Nome Cognome
                     </p>
 
-                    <p class="publication-journal">
-                        Conference Proceedings, 2024
+                    <p class="publication-venue">
+                        Proceedings of the Example Conference, 2024
                     </p>
-
 
                     <div class="publication-links">
 
-                        <a href="#">
+                        <a href="#"
+                           target="_blank">
                             [Publisher]
                         </a>
 
-                        <a href="papers/example-paper-4.pdf"
+                        <a href="papers/paper-04.pdf"
                            target="_blank">
 
                             <span class="download-icon">
@@ -901,8 +916,8 @@
                         </a>
 
                         <button
-                            class="abstract-button"
-                            onclick="toggleAbstract('abstract4')">
+                            class="abstract-toggle"
+                            onclick="toggleAbstract(this)">
 
                             [Show Abstract]
 
@@ -910,10 +925,11 @@
 
                     </div>
 
+                    <div class="abstract">
 
-                    <div id="abstract4" class="abstract">
-
-                        <strong>Abstract.</strong>
+                        <span class="abstract-label">
+                            Abstract.
+                        </span>
 
                         This contribution provides an overview of
                         numerical techniques commonly employed in
@@ -925,7 +941,6 @@
 
                 </article>
 
-
             </div>
 
         </section>
@@ -933,62 +948,68 @@
 
 
         <!-- =================================================
-             CONTACT
+             CONTACTS
         ================================================= -->
 
-        <section id="contact" class="section">
+        <section id="contacts" class="section">
 
-            <h2 class="section-title">
+            <h2 class="section-heading">
                 Contacts
             </h2>
 
-
-            <div class="contact-content">
+            <div class="contact">
 
                 <p>
-                    For questions, collaborations, or academic
-                    inquiries, please feel free to contact me.
+                    For research collaborations, questions, or
+                    academic inquiries, please feel free to contact me.
                 </p>
 
+                <div class="contact-item">
 
-                <ul class="contact-list">
+                    <strong>Email:</strong>
 
-                    <li>
-                        <strong>Email:</strong>
-                        <a href="mailto:name@example.com">
-                            name@example.com
-                        </a>
-                    </li>
+                    <a href="mailto:name@example.com">
+                        name@example.com
+                    </a>
 
-                    <li>
-                        <strong>ORCID:</strong>
-                        <a href="#">
-                            0000-0000-0000-0000
-                        </a>
-                    </li>
+                </div>
 
-                    <li>
-                        <strong>Google Scholar:</strong>
-                        <a href="#">
-                            Google Scholar profile
-                        </a>
-                    </li>
+                <div class="contact-item">
 
-                    <li>
-                        <strong>GitHub:</strong>
-                        <a href="#">
-                            github.com/username
-                        </a>
-                    </li>
+                    <strong>ORCID:</strong>
 
-                </ul>
+                    <a href="#">
+                        0000-0000-0000-0000
+                    </a>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>Google Scholar:</strong>
+
+                    <a href="#">
+                        Google Scholar
+                    </a>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <strong>GitHub:</strong>
+
+                    <a href="#">
+                        github.com/username
+                    </a>
+
+                </div>
 
             </div>
 
         </section>
 
-
     </main>
+
 
 
     <!-- =====================================================
@@ -1009,11 +1030,32 @@
 
     <script>
 
-        function toggleAbstract(id) {
+        function toggleAbstract(button) {
 
-            const abstract = document.getElementById(id);
+            const abstract =
+                button
+                .closest(".publication")
+                .querySelector(".abstract");
 
-            abstract.classList.toggle("open");
+            const isOpen =
+                abstract.classList.contains("visible");
+
+
+            if (isOpen) {
+
+                abstract.classList.remove("visible");
+
+                button.textContent =
+                    "[Show Abstract]";
+
+            } else {
+
+                abstract.classList.add("visible");
+
+                button.textContent =
+                    "[Hide Abstract]";
+
+            }
 
         }
 
@@ -1023,4 +1065,3 @@
 </body>
 
 </html>
-```
