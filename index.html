@@ -283,18 +283,20 @@
            PUBLICATION
         ===================================================== */
 
-       .publication {
+   .publication {
     display: grid;
 
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 40px minmax(0, 1fr) 150px;
 
-    gap: 10px;
+    gap: 10px 25px;
 
     padding-bottom: 25px;
 
     margin-bottom: 25px;
 
     border-bottom: 1px solid #eeeeee;
+
+    align-items: start;
 }
 
 .publication-number {
@@ -307,6 +309,17 @@
 
 .publication-content {
     min-width: 0;
+}
+
+.publication-thumbnail {
+    width: 150px;
+    height: 100px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border: 1px solid #e5e5e5;
 }
 
 .year {
@@ -478,9 +491,7 @@
 
             .navigation {
                 width: 100%;
-
                 justify-content: center;
-
                 gap: 27px;
             }
 
@@ -490,7 +501,6 @@
 
             .home {
                 grid-template-columns: 1fr;
-
                 row-gap: 50px;
             }
 
@@ -508,12 +518,23 @@
 
             .section-heading {
                 font-size: 26px;
-
                 margin-bottom: 35px;
             }
 
             footer {
                 padding: 25px 20px;
+            }
+
+            .publication {
+                grid-template-columns: 35px minmax(0, 1fr);
+            }
+
+            .publication-thumbnail {
+                grid-column: 2;
+                width: 100%;
+                max-width: 180px;
+                height: 120px;
+                margin-top: 10px;
             }
         }
 
@@ -740,6 +761,12 @@
                 </div>
 
             </div>
+
+             <img
+                class="publication-thumbnail"
+                src="pressure-drop-flow-rate.jpg"
+                alt="Bubble trains flowing through a capillary bundle"
+            >
 
         </article>
 
