@@ -283,52 +283,48 @@
            PUBLICATION
         ===================================================== */
 
-        .publication {
-            padding-bottom: 25px;
+       .publication {
+    display: grid;
 
-            margin-bottom: 25px;
+    grid-template-columns: 40px 1fr;
 
-            border-bottom: 1px solid #eeeeee;
-        }
+    gap: 10px;
 
-        .publication:last-child {
-            margin-bottom: 0;
-        }
+    padding-bottom: 25px;
 
-        .publication-title {
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
+    margin-bottom: 25px;
 
-            font-size: 16px;
+    border-bottom: 1px solid #eeeeee;
+}
 
-            font-weight: normal;
+.publication-number {
+    color: #777;
 
-            line-height: 1.5;
+    font-size: 13px;
 
-            margin-bottom: 5px;
-        }
+    padding-top: 3px;
+}
 
-        .publication-authors {
-            color: #555;
+.publication-content {
+    min-width: 0;
+}
 
-            font-size: 13.5px;
+.year {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-            margin-bottom: 2px;
-        }
+    font-size: 18px;
 
-        .publication-venue {
-            color: #777;
+    font-weight: normal;
 
-            font-size: 13px;
+    color: #333;
 
-            font-style: italic;
+    margin-top: 38px;
 
-            margin-bottom: 11px;
-        }
-
-
+    margin-bottom: 18px;
+}
         /* =====================================================
            PUBLICATION LINKS
         ===================================================== */
@@ -626,244 +622,437 @@
         </section>
 
 
+<!-- =================================================
+     PUBLICATIONS
+================================================= -->
+
+<section id="publications" class="section">
+
+    <h2 class="section-heading">
+        Publications
+    </h2>
+
+
+    <!-- =================================================
+         SUBMITTED MANUSCRIPTS
+    ================================================= -->
+
+    <div class="publication-category">
+
+        <h3 class="category-heading">
+            Submitted manuscripts
+        </h3>
+
+        <!--
+        Per ora questa categoria è vuota.
+        Quando avrai un submitted manuscript,
+        inserirai qui il relativo <article>.
+        -->
+
+    </div>
+
+
+
+    <!-- =================================================
+         JOURNAL PUBLICATIONS
+    ================================================= -->
+
+    <div class="publication-category">
+
+        <h3 class="category-heading">
+            Journal publications
+        </h3>
+
 
         <!-- =================================================
-             PUBLICATIONS
+             2026
         ================================================= -->
 
-        <section id="publications" class="section">
-
-            <h2 class="section-heading">
-                Publications
-            </h2>
+        <h4 class="year">
+            2026
+        </h4>
 
 
-            <!-- =============================================
-                 SUBMITTED MANUSCRIPTS
-            ============================================== -->
+        <!-- PAPER [4] -->
 
-            <div class="publication-category">
+        <article class="publication">
 
-                <h3 class="category-heading">
-                    Submitted manuscripts
-                </h3>
+            <div class="publication-number">
+                [4]
+            </div>
+
+            <div class="publication-content">
+
+                <h4 class="publication-title">
+                    A Numerical Investigation of Turbulent
+                    Flow Dynamics in Complex Geometries
+                </h4>
+
+                <p class="publication-authors">
+                    Nome Cognome, A. Researcher, B. Scientist
+                </p>
+
+                <p class="publication-venue">
+                    Journal of Fluid Mechanics, 2026
+                </p>
 
 
+                <div class="publication-links">
 
-            <!-- =============================================
-                 JOURNAL PUBLICATIONS
-            ============================================== -->
+                    <!-- Publisher -->
 
-            <div class="publication-category">
-
-                <h3 class="category-heading">
-                    Journal publications
-                </h3>
+                    <a href="#"
+                       target="_blank">
+                        [Publisher]
+                    </a>
 
 
-                <article class="publication">
+                    <!-- PDF -->
 
-                    <h4 class="publication-title">
-                        Experimental and Numerical Analysis of
-                        Vortex Formation in Confined Flows
-                    </h4>
+                    <a href="papers/paper-04.pdf"
+                       target="_blank">
 
-                    <p class="publication-authors">
-                        Nome Cognome, C. Author, D. Researcher
-                    </p>
-
-                    <p class="publication-venue">
-                        Journal of Computational Physics,
-                        512, 2025
-                    </p>
-
-                    <div class="publication-links">
-
-                        <a href="#"
-                           target="_blank">
-                            [Publisher]
-                        </a>
-
-                        <a href="papers/paper-02.pdf"
-                           target="_blank">
-
-                            <span class="download-icon">
-                                ↓
-                            </span>
-
-                            [PDF]
-
-                        </a>
-
-                        <button
-                            class="abstract-toggle"
-                            onclick="toggleAbstract(this)">
-
-                            [Show Abstract]
-
-                        </button>
-
-                    </div>
-
-                    <div class="abstract">
-
-                        <span class="abstract-label">
-                            Abstract.
+                        <span class="download-icon">
+                            ↓
                         </span>
 
-                        This paper presents a combined experimental
-                        and numerical investigation of vortex
-                        formation in confined flows. Particular
-                        attention is given to the dependence of
-                        vortex dynamics on Reynolds number and
-                        geometric confinement. Numerical predictions
-                        are compared against experimental measurements
-                        and show excellent agreement.
+                        [PDF]
 
-                    </div>
-
-                </article>
+                    </a>
 
 
+                    <!-- Video: questo paper ha un video -->
 
-                <article class="publication">
+                    <a href="https://www.youtube.com/"
+                       target="_blank">
+                        [Video]
+                    </a>
 
-                    <h4 class="publication-title">
-                        Reduced-Order Modelling of Unsteady
-                        Aerodynamic Flows
-                    </h4>
 
-                    <p class="publication-authors">
-                        Nome Cognome, E. Author
-                    </p>
+                    <!-- Abstract -->
 
-                    <p class="publication-venue">
-                        Physics of Fluids, 37, 2025
-                    </p>
+                    <button
+                        class="abstract-toggle"
+                        onclick="toggleAbstract(this)">
 
-                    <div class="publication-links">
+                        [Show Abstract]
 
-                        <a href="#"
-                           target="_blank">
-                            [Publisher]
-                        </a>
+                    </button>
 
-                        <a href="papers/paper-03.pdf"
-                           target="_blank">
+                </div>
 
-                            <span class="download-icon">
-                                ↓
-                            </span>
 
-                            [PDF]
+                <!-- ABSTRACT -->
 
-                        </a>
+                <div class="abstract">
 
-                        <button
-                            class="abstract-toggle"
-                            onclick="toggleAbstract(this)">
+                    <span class="abstract-label">
+                        Abstract.
+                    </span>
 
-                            [Show Abstract]
+                    We investigate the dynamics of turbulent
+                    flows developing in complex geometries using
+                    high-fidelity numerical simulations. The
+                    analysis focuses on the interaction between
+                    large-scale coherent structures and small-scale
+                    turbulent fluctuations.
 
-                        </button>
-
-                    </div>
-
-                    <div class="abstract">
-
-                        <span class="abstract-label">
-                            Abstract.
-                        </span>
-
-                        A reduced-order modelling framework is
-                        introduced for the efficient prediction of
-                        unsteady aerodynamic flows. The proposed
-                        approach combines data-driven techniques
-                        with classical physical modelling and is
-                        demonstrated on several benchmark problems.
-
-                    </div>
-
-                </article>
+                </div>
 
             </div>
 
+        </article>
 
 
-            <!-- =============================================
-                 OTHER
-            ============================================== -->
 
-            <div class="publication-category">
+        <!-- =================================================
+             2025
+        ================================================= -->
 
-                <h3 class="category-heading">
-                    Other
-                </h3>
+        <h4 class="year">
+            2025
+        </h4>
 
 
-                <article class="publication">
+        <!-- PAPER [3] -->
 
-                    <h4 class="publication-title">
-                        Numerical Methods for Fluid Dynamics:
-                        A Practical Introduction
-                    </h4>
+        <article class="publication">
 
-                    <p class="publication-authors">
-                        Nome Cognome
-                    </p>
+            <div class="publication-number">
+                [3]
+            </div>
 
-                    <p class="publication-venue">
-                        Proceedings of the Example Conference, 2024
-                    </p>
+            <div class="publication-content">
 
-                    <div class="publication-links">
+                <h4 class="publication-title">
+                    Experimental and Numerical Analysis of
+                    Vortex Formation in Confined Flows
+                </h4>
 
-                        <a href="#"
-                           target="_blank">
-                            [Publisher]
-                        </a>
+                <p class="publication-authors">
+                    Nome Cognome, C. Author, D. Researcher
+                </p>
 
-                        <a href="papers/paper-04.pdf"
-                           target="_blank">
+                <p class="publication-venue">
+                    Journal of Computational Physics, 2025
+                </p>
 
-                            <span class="download-icon">
-                                ↓
-                            </span>
 
-                            [PDF]
+                <div class="publication-links">
 
-                        </a>
+                    <a href="#"
+                       target="_blank">
+                        [Publisher]
+                    </a>
 
-                        <button
-                            class="abstract-toggle"
-                            onclick="toggleAbstract(this)">
 
-                            [Show Abstract]
+                    <a href="papers/paper-03.pdf"
+                       target="_blank">
 
-                        </button>
-
-                    </div>
-
-                    <div class="abstract">
-
-                        <span class="abstract-label">
-                            Abstract.
+                        <span class="download-icon">
+                            ↓
                         </span>
 
-                        This contribution provides an overview of
-                        numerical techniques commonly employed in
-                        computational fluid dynamics, with particular
-                        emphasis on discretisation methods, stability,
-                        convergence, and practical implementation.
+                        [PDF]
 
-                    </div>
+                    </a>
 
-                </article>
+
+                    <!--
+                    Questo paper NON ha un video,
+                    quindi non mettiamo [Video].
+                    -->
+
+
+                    <button
+                        class="abstract-toggle"
+                        onclick="toggleAbstract(this)">
+
+                        [Show Abstract]
+
+                    </button>
+
+                </div>
+
+
+                <div class="abstract">
+
+                    <span class="abstract-label">
+                        Abstract.
+                    </span>
+
+                    This paper presents a combined experimental
+                    and numerical investigation of vortex
+                    formation in confined flows. Particular
+                    attention is given to the dependence of
+                    vortex dynamics on Reynolds number and
+                    geometric confinement.
+
+                </div>
 
             </div>
 
-        </section>
+        </article>
 
+
+
+        <!-- =================================================
+             2024
+        ================================================= -->
+
+        <h4 class="year">
+            2024
+        </h4>
+
+
+        <!-- PAPER [2] -->
+
+        <article class="publication">
+
+            <div class="publication-number">
+                [2]
+            </div>
+
+            <div class="publication-content">
+
+                <h4 class="publication-title">
+                    Reduced-Order Modelling of Unsteady
+                    Aerodynamic Flows
+                </h4>
+
+                <p class="publication-authors">
+                    Nome Cognome, E. Author
+                </p>
+
+                <p class="publication-venue">
+                    Physics of Fluids, 2024
+                </p>
+
+
+                <div class="publication-links">
+
+                    <a href="#"
+                       target="_blank">
+                        [Publisher]
+                    </a>
+
+
+                    <a href="papers/paper-02.pdf"
+                       target="_blank">
+
+                        <span class="download-icon">
+                            ↓
+                        </span>
+
+                        [PDF]
+
+                    </a>
+
+
+                    <!-- Video disponibile per questo paper -->
+
+                    <a href="https://www.youtube.com/"
+                       target="_blank">
+                        [Video]
+                    </a>
+
+
+                    <button
+                        class="abstract-toggle"
+                        onclick="toggleAbstract(this)">
+
+                        [Show Abstract]
+
+                    </button>
+
+                </div>
+
+
+                <div class="abstract">
+
+                    <span class="abstract-label">
+                        Abstract.
+                    </span>
+
+                    A reduced-order modelling framework is
+                    introduced for the efficient prediction of
+                    unsteady aerodynamic flows. The proposed
+                    approach combines data-driven techniques
+                    with classical physical modelling.
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             2023
+        ================================================= -->
+
+        <h4 class="year">
+            2023
+        </h4>
+
+
+        <!-- PAPER [1] -->
+
+        <article class="publication">
+
+            <div class="publication-number">
+                [1]
+            </div>
+
+            <div class="publication-content">
+
+                <h4 class="publication-title">
+                    Numerical Methods for Fluid Dynamics:
+                    A Practical Introduction
+                </h4>
+
+                <p class="publication-authors">
+                    Nome Cognome, D. Researcher
+                </p>
+
+                <p class="publication-venue">
+                    Physics of Fluids, 2023
+                </p>
+
+
+                <div class="publication-links">
+
+                    <a href="#"
+                       target="_blank">
+                        [Publisher]
+                    </a>
+
+
+                    <a href="papers/paper-01.pdf"
+                       target="_blank">
+
+                        <span class="download-icon">
+                            ↓
+                        </span>
+
+                        [PDF]
+
+                    </a>
+
+
+                    <button
+                        class="abstract-toggle"
+                        onclick="toggleAbstract(this)">
+
+                        [Show Abstract]
+
+                    </button>
+
+                </div>
+
+
+                <div class="abstract">
+
+                    <span class="abstract-label">
+                        Abstract.
+                    </span>
+
+                    This contribution provides an overview of
+                    numerical techniques commonly employed in
+                    computational fluid dynamics, with particular
+                    emphasis on discretisation methods, stability,
+                    convergence, and practical implementation.
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+
+    <!-- =================================================
+         OTHER
+    ================================================= -->
+
+    <div class="publication-category">
+
+        <h3 class="category-heading">
+            Other
+        </h3>
+
+        <!--
+        Per ora questa categoria è vuota.
+        Quando avrai una pubblicazione da inserire
+        nella categoria "Other", la aggiungerai qui.
+        -->
+
+    </div>
+
+</section>
 
 
         <!-- =================================================
