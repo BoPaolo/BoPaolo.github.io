@@ -1,1028 +1,1026 @@
+```html
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Paolo Botticini — Academic Profile</title>
-
-  <meta name="description"
-        content="Academic website of [Nome Cognome], researcher in [Area di ricerca].">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap"
-        rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #f8f8f6;
-      --surface: #ffffff;
-      --text: #202124;
-      --muted: #6b6d70;
-      --accent: #385b72;
-      --accent-light: #e8eef2;
-      --border: #e2e2df;
-      --max-width: 1080px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Inter", sans-serif;
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(90%, var(--max-width));
-      margin: auto;
-    }
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(248, 248, 246, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: "Libre Baskerville", serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-content {
-      max-width: 780px;
-      padding: 100px 0;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-family: "Libre Baskerville", serif;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      line-height: 1.1;
-      font-weight: 400;
-      letter-spacing: -0.04em;
-      margin-bottom: 28px;
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 1.12rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      margin-top: 35px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 11px 20px;
-      border: 1px solid var(--accent);
-      border-radius: 5px;
-      color: var(--accent);
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-    }
-
-    .button:hover {
-      background: var(--accent);
-      color: white;
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .button.primary:hover {
-      background: #2b4759;
-    }
-
-    /* =========================
-       SECTIONS
-    ========================= */
-
-    section {
-      padding: 100px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 70px;
-    }
-
-    .section-title {
-      font-family: "Libre Baskerville", serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-    }
-
-    .section-label {
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-top: 8px;
-    }
-
-    .content {
-      max-width: 720px;
-    }
-
-    .content p {
-      margin-bottom: 20px;
-    }
-
-    /* =========================
-       RESEARCH
-    ========================= */
-
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-    .research-card {
-      padding: 25px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      transition: transform 0.2s ease,
-                  box-shadow 0.2s ease;
-    }
-
-    .research-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    }
-
-    .research-card h3 {
-      font-family: "Libre Baskerville", serif;
-      font-size: 1rem;
-      margin-bottom: 8px;
-      font-weight: 400;
-    }
-
-    .research-card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    /* =========================
-       PUBLICATIONS
-    ========================= */
-
-    .publication {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .publication:first-child {
-      padding-top: 0;
-    }
-
-    .publication:last-child {
-      border-bottom: none;
-    }
-
-    .publication-year {
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .publication-title {
-      font-family: "Libre Baskerville", serif;
-      font-size: 1.05rem;
-      line-height: 1.5;
-      margin-bottom: 6px;
-    }
-
-    .publication-authors {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .publication-journal {
-      color: var(--muted);
-      font-size: 0.85rem;
-      font-style: italic;
-      margin-top: 3px;
-    }
-
-    .publication-links {
-      margin-top: 10px;
-      display: flex;
-      gap: 15px;
-      font-size: 0.82rem;
-    }
-
-    .publication-links a {
-      color: var(--accent);
-    }
-
-    .publication-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .project {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 25px;
-      padding: 25px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .project:last-child {
-      border-bottom: none;
-    }
-
-    .project-number {
-      color: var(--accent);
-      font-size: 0.85rem;
-    }
-
-    .project h3 {
-      font-family: "Libre Baskerville", serif;
-      font-weight: 400;
-      font-size: 1.1rem;
-      margin-bottom: 7px;
-    }
-
-    .project p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .experience {
-      margin-bottom: 35px;
-    }
-
-    .experience:last-child {
-      margin-bottom: 0;
-    }
-
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 5px;
-    }
-
-    .experience h3 {
-      font-family: "Libre Baskerville", serif;
-      font-weight: 400;
-      font-size: 1rem;
-    }
-
-    .experience-date {
-      color: var(--muted);
-      font-size: 0.82rem;
-      white-space: nowrap;
-    }
-
-    .experience p {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 25px;
-    }
-
-    .contact-link {
-      padding: 9px 15px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 5px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      transition: all 0.2s ease;
-    }
-
-    .contact-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 35px 0;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    footer .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================= */
-
-    @media (max-width: 750px) {
-
-      .nav-inner {
-        height: auto;
-        padding: 18px 0;
-        align-items: flex-start;
-        gap: 15px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-content {
-        padding: 90px 0;
-      }
-
-      section {
-        padding: 70px 0;
-      }
-
-      .section-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project {
-        grid-template-columns: 55px 1fr;
-        gap: 15px;
-      }
-
-      .experience-header {
-        flex-direction: column;
-        gap: 2px;
-      }
-
-      footer .container {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .nav-links {
-        font-size: 0.78rem;
-        gap: 8px;
-      }
-
-      h1 {
-        font-size: 2.7rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nome Cognome | Fluid Mechanics</title>
+
+    <style>
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #222222;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           TOP NAVIGATION BAR
+        ===================================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            height: 64px;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #e5e5e5;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-inner {
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-name {
+            font-family: Georgia, serif;
+
+            font-size: 18px;
+
+            color: #222222;
+        }
+
+        .nav-links {
+            display: flex;
+
+            gap: 35px;
+
+            list-style: none;
+
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #555555;
+
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+
+        /* =====================================================
+           MAIN LAYOUT
+        ===================================================== */
+
+        .page {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 70px 30px 100px;
+        }
+
+
+        /* =====================================================
+           HOME
+        ===================================================== */
+
+        .home-layout {
+
+            display: grid;
+
+            grid-template-columns: 270px 1fr;
+
+            gap: 80px;
+
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           LEFT SIDEBAR
+        ===================================================== */
+
+        .sidebar {
+            position: sticky;
+
+            top: 100px;
+        }
+
+        .profile-name {
+            font-family: Georgia, serif;
+
+            font-size: 30px;
+
+            font-weight: normal;
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+        }
+
+        .profile-role {
+            color: #555555;
+
+            font-size: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .profile-info {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #666666;
+
+            font-size: 13px;
+        }
+
+        /*
+           Simple academic/building icon
+        */
+
+        .profile-icon {
+            width: 25px;
+            height: 25px;
+
+            border: 1px solid #cccccc;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 12px;
+
+            color: #555555;
+        }
+
+
+        /* =====================================================
+           MAIN HOME CONTENT
+        ===================================================== */
+
+        .home-content {
+            max-width: 720px;
+        }
+
+        .welcome {
+            font-family: Georgia, serif;
+
+            font-size: 42px;
+
+            font-weight: normal;
+
+            line-height: 1.2;
+
+            margin-bottom: 30px;
+        }
+
+        .home-content p {
+            color: #555555;
+
+            font-size: 16px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        .section {
+            margin-top: 120px;
+
+            scroll-margin-top: 90px;
+        }
+
+        .section-title {
+            font-family: Georgia, serif;
+
+            font-size: 30px;
+
+            font-weight: normal;
+
+            margin-bottom: 45px;
+
+            padding-bottom: 12px;
+
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+
+        /* =====================================================
+           PUBLICATIONS
+        ===================================================== */
+
+        .publication-category {
+            margin-bottom: 55px;
+        }
+
+        .category-title {
+            font-size: 18px;
+
+            font-weight: normal;
+
+            color: #333333;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* Individual publication */
+
+        .publication {
+            padding: 0 0 28px;
+
+            margin-bottom: 28px;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .publication:last-child {
+            margin-bottom: 0;
+        }
+
+        .publication-title {
+            font-family: Georgia, serif;
+
+            font-size: 16px;
+
+            line-height: 1.5;
+
+            margin-bottom: 6px;
+        }
+
+        .publication-authors {
+            color: #555555;
+
+            font-size: 14px;
+
+            margin-bottom: 4px;
+        }
+
+        .publication-journal {
+            color: #777777;
+
+            font-size: 14px;
+
+            font-style: italic;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =====================================================
+           PUBLICATION BUTTONS
+        ===================================================== */
+
+        .publication-links {
+            display: flex;
+
+            gap: 18px;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+        }
+
+        .publication-links a,
+        .abstract-button {
+
+            background: none;
+
+            border: none;
+
+            padding: 0;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            color: #555555;
+
+            cursor: pointer;
+
+            transition: color 0.2s ease;
+        }
+
+        .publication-links a:hover,
+        .abstract-button:hover {
+
+            color: #000000;
+
+            text-decoration: underline;
+        }
+
+
+        /* Download icon */
+
+        .download-icon {
+
+            font-size: 13px;
+
+            margin-right: 3px;
+        }
+
+
+        /* =====================================================
+           ABSTRACT
+        ===================================================== */
+
+        .abstract {
+
+            display: none;
+
+            margin-top: 18px;
+
+            padding: 18px 20px;
+
+            background: #f8f8f8;
+
+            border-left: 3px solid #cccccc;
+
+            color: #555555;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        .abstract.open {
+            display: block;
+        }
+
+
+        /* =====================================================
+           CONTACTS
+        ===================================================== */
+
+        .contact-content {
+            max-width: 650px;
+        }
+
+        .contact-content p {
+            color: #555555;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 10px;
+
+            color: #555555;
+
+            font-size: 14px;
+        }
+
+        .contact-list a {
+            color: #333333;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 30px;
+
+            border-top: 1px solid #e5e5e5;
+
+            color: #999999;
+
+            font-size: 12px;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 750px) {
+
+            .navbar-inner {
+                padding: 0 20px;
+            }
+
+            .navbar-name {
+                display: none;
+            }
+
+            .nav-links {
+                width: 100%;
+
+                justify-content: center;
+
+                gap: 25px;
+            }
+
+            .page {
+                padding: 50px 20px 80px;
+            }
+
+            .home-layout {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .welcome {
+                font-size: 34px;
+            }
+
+            .section {
+                margin-top: 90px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
 
-  <nav>
-    <div class="container nav-inner">
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
 
-      <a href="#" class="logo">
-        [N.C.]
-      </a>
+    <nav class="navbar">
 
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <div class="navbar-inner">
 
-    </div>
-  </nav>
+            <a href="#home" class="navbar-name">
+                Nome Cognome
+            </a>
 
+            <ul class="nav-links">
 
-  <!-- =========================
-       HERO
-  ========================= -->
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
 
-  <header class="hero">
+                <li>
+                    <a href="#publications">
+                        Publications
+                    </a>
+                </li>
 
-    <div class="container">
+                <li>
+                    <a href="#contact">
+                        Contacts
+                    </a>
+                </li>
 
-      <div class="hero-content">
-
-        <div class="eyebrow">
-          Researcher · PhD Candidate · Academic
-        </div>
-
-        <h1>
-          [Nome<br>
-          Cognome]
-        </h1>
-
-        <p>
-          PhD candidate in [Disciplina] at [Università].
-          My research focuses on [breve descrizione della tua
-          ricerca e dei tuoi interessi accademici].
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#research" class="button primary">
-            Research
-          </a>
-
-          <a href="cv.pdf" class="button" target="_blank">
-            Download CV
-          </a>
+            </ul>
 
         </div>
 
-      </div>
+    </nav>
 
-    </div>
 
-  </header>
 
+    <main class="page">
 
-  <!-- =========================
-       ABOUT
-  ========================= -->
 
-  <section id="about">
+        <!-- =================================================
+             HOME
+        ================================================= -->
 
-    <div class="container section-grid">
+        <section id="home">
 
-      <div>
-        <h2 class="section-title">About</h2>
-        <div class="section-label">Profile</div>
-      </div>
+            <div class="home-layout">
 
-      <div class="content">
 
-        <p>
-          Sono [Nome Cognome], [ruolo accademico] presso
-          [Università / Dipartimento].
-        </p>
+                <!-- LEFT COLUMN -->
 
-        <p>
-          Il mio lavoro si concentra su [area principale].
-          Sono particolarmente interessato/a a [tema 1],
-          [tema 2] e [tema 3].
-        </p>
+                <aside class="sidebar">
 
-        <p>
-          Attualmente sto lavorando a [descrizione breve del
-          progetto o della tesi].
-        </p>
+                    <h1 class="profile-name">
+                        Nome Cognome
+                    </h1>
 
-      </div>
+                    <p class="profile-role">
+                        Postdoctoral Fellow<br>
+                        in Fluid Mechanics
+                    </p>
 
-    </div>
 
-  </section>
+                    <div class="profile-info">
 
+                        <div class="profile-icon">
+                            ♢
+                        </div>
 
-  <!-- =========================
-       RESEARCH
-  ========================= -->
+                        <span>
+                            Department of Mechanical Engineering
+                        </span>
 
-  <section id="research">
+                    </div>
 
-    <div class="container section-grid">
+                </aside>
 
-      <div>
-        <h2 class="section-title">Research</h2>
-        <div class="section-label">Areas of interest</div>
-      </div>
 
-      <div class="content">
+                <!-- RIGHT COLUMN -->
 
-        <div class="research-grid">
+                <div class="home-content">
 
-          <article class="research-card">
+                    <h2 class="welcome">
+                        Welcome to my webpage!
+                    </h2>
 
-            <h3>Research Area I</h3>
+                    <p>
+                        I am a Postdoctoral Fellow in Fluid Mechanics
+                        at the University of Example.
+                    </p>
 
-            <p>
-              Breve descrizione dell'area di ricerca e delle
-              principali domande scientifiche.
-            </p>
+                    <p>
+                        My research interests include fluid dynamics,
+                        turbulence, computational fluid dynamics,
+                        and numerical methods for complex flows.
+                    </p>
 
-          </article>
+                    <p>
+                        On this website you can find information about
+                        my research activities, publications, and
+                        academic background.
+                    </p>
 
+                </div>
 
-          <article class="research-card">
+            </div>
 
-            <h3>Research Area II</h3>
+        </section>
 
-            <p>
-              Breve descrizione dell'area di ricerca e dei
-              problemi affrontati.
-            </p>
 
-          </article>
 
+        <!-- =================================================
+             PUBLICATIONS
+        ================================================= -->
 
-          <article class="research-card">
+        <section id="publications" class="section">
 
-            <h3>Research Area III</h3>
+            <h2 class="section-title">
+                Publications
+            </h2>
 
-            <p>
-              Metodi, teorie o tematiche specifiche su cui
-              lavori.
-            </p>
 
-          </article>
+            <!-- =============================================
+                 SUBMITTED MANUSCRIPTS
+            ============================================== -->
 
+            <div class="publication-category">
 
-          <article class="research-card">
+                <h3 class="category-title">
+                    Submitted manuscripts
+                </h3>
 
-            <h3>Research Area IV</h3>
 
-            <p>
-              Un'altra area di interesse accademico.
-            </p>
+                <!-- PUBLICATION 1 -->
 
-          </article>
+                <article class="publication">
 
-        </div>
+                    <h4 class="publication-title">
+                        A Numerical Investigation of Turbulent
+                        Flow Dynamics in Complex Geometries
+                    </h4>
 
-      </div>
+                    <p class="publication-authors">
+                        Nome Cognome, A. Researcher, B. Scientist
+                    </p>
 
-    </div>
+                    <p class="publication-journal">
+                        Submitted to Journal of Fluid Mechanics
+                    </p>
 
-  </section>
 
+                    <div class="publication-links">
 
-  <!-- =========================
-       PUBLICATIONS
-  ========================= -->
+                        <a href="#">
+                            [Publisher]
+                        </a>
 
-  <section id="publications">
+                        <a href="papers/example-paper.pdf"
+                           target="_blank">
 
-    <div class="container section-grid">
+                            <span class="download-icon">
+                                ↓
+                            </span>
 
-      <div>
-        <h2 class="section-title">Publications</h2>
-        <div class="section-label">Selected work</div>
-      </div>
+                            [PDF]
 
-      <div class="content">
+                        </a>
 
+                        <button
+                            class="abstract-button"
+                            onclick="toggleAbstract('abstract1')">
 
-        <article class="publication">
+                            [Show Abstract]
 
-          <div class="publication-year">
-            2026
-          </div>
+                        </button>
 
-          <div class="publication-title">
-            [Titolo del paper o articolo]
-          </div>
+                    </div>
 
-          <div class="publication-authors">
-            [Nome Cognome], [Co-autore]
-          </div>
 
-          <div class="publication-journal">
-            [Journal / Conference]
-          </div>
+                    <div id="abstract1" class="abstract">
 
-          <div class="publication-links">
-            <a href="#" target="_blank">Paper</a>
-            <a href="#" target="_blank">DOI</a>
-          </div>
+                        <strong>Abstract.</strong>
 
-        </article>
+                        We investigate the dynamics of turbulent
+                        flows developing in complex geometries using
+                        high-fidelity numerical simulations. The
+                        analysis focuses on the interaction between
+                        large-scale coherent structures and small-scale
+                        turbulent fluctuations. The results provide
+                        new insights into the mechanisms governing
+                        momentum transport and flow separation.
 
+                    </div>
 
-        <article class="publication">
+                </article>
 
-          <div class="publication-year">
-            2025
-          </div>
 
-          <div class="publication-title">
-            [Titolo del secondo lavoro]
-          </div>
+            </div>
 
-          <div class="publication-authors">
-            [Nome Cognome], [Co-autore]
-          </div>
 
-          <div class="publication-journal">
-            [Journal / Conference]
-          </div>
 
-          <div class="publication-links">
-            <a href="#" target="_blank">Paper</a>
-            <a href="#" target="_blank">DOI</a>
-          </div>
+            <!-- =============================================
+                 JOURNAL PUBLICATIONS
+            ============================================== -->
 
-        </article>
+            <div class="publication-category">
 
+                <h3 class="category-title">
+                    Journal publications
+                </h3>
 
-        <article class="publication">
 
-          <div class="publication-year">
-            2024
-          </div>
+                <!-- PUBLICATION 2 -->
 
-          <div class="publication-title">
-            [Titolo del terzo lavoro]
-          </div>
+                <article class="publication">
 
-          <div class="publication-authors">
-            [Nome Cognome], [Co-autore]
-          </div>
+                    <h4 class="publication-title">
+                        Experimental and Numerical Analysis of
+                        Vortex Formation in Confined Flows
+                    </h4>
 
-          <div class="publication-journal">
-            [Journal / Conference]
-          </div>
+                    <p class="publication-authors">
+                        Nome Cognome, C. Author, D. Researcher
+                    </p>
 
-          <div class="publication-links">
-            <a href="#" target="_blank">Paper</a>
-            <a href="#" target="_blank">DOI</a>
-          </div>
+                    <p class="publication-journal">
+                        Journal of Computational Physics,
+                        Vol. 512, 2025
+                    </p>
 
-        </article>
 
+                    <div class="publication-links">
 
-      </div>
+                        <a href="#">
+                            [Publisher]
+                        </a>
 
-    </div>
+                        <a href="papers/example-paper-2.pdf"
+                           target="_blank">
 
-  </section>
+                            <span class="download-icon">
+                                ↓
+                            </span>
 
+                            [PDF]
 
-  <!-- =========================
-       PROJECTS
-  ========================= -->
+                        </a>
 
-  <section id="projects">
+                        <button
+                            class="abstract-button"
+                            onclick="toggleAbstract('abstract2')">
 
-    <div class="container section-grid">
+                            [Show Abstract]
 
-      <div>
-        <h2 class="section-title">Projects</h2>
-        <div class="section-label">Selected projects</div>
-      </div>
+                        </button>
 
-      <div class="content">
+                    </div>
 
 
-        <article class="project">
+                    <div id="abstract2" class="abstract">
 
-          <div class="project-number">
-            01
-          </div>
+                        <strong>Abstract.</strong>
 
-          <div>
+                        This paper presents a combined experimental
+                        and numerical investigation of vortex
+                        formation in confined flows. Particular
+                        attention is given to the dependence of
+                        vortex dynamics on Reynolds number and
+                        geometric confinement. Numerical predictions
+                        are compared against experimental measurements
+                        and show excellent agreement.
 
-            <h3>
-              [Nome del progetto]
-            </h3>
+                    </div>
 
-            <p>
-              Descrizione sintetica del progetto, degli obiettivi
-              e del tuo contributo.
-            </p>
+                </article>
 
-          </div>
 
-        </article>
 
+                <!-- PUBLICATION 3 -->
 
-        <article class="project">
+                <article class="publication">
 
-          <div class="project-number">
-            02
-          </div>
+                    <h4 class="publication-title">
+                        Reduced-Order Modelling of Unsteady
+                        Aerodynamic Flows
+                    </h4>
 
-          <div>
+                    <p class="publication-authors">
+                        Nome Cognome, E. Author
+                    </p>
 
-            <h3>
-              [Secondo progetto]
-            </h3>
+                    <p class="publication-journal">
+                        Physics of Fluids, Vol. 37, 2025
+                    </p>
 
-            <p>
-              Breve descrizione del progetto e delle attività
-              svolte.
-            </p>
 
-          </div>
+                    <div class="publication-links">
 
-        </article>
+                        <a href="#">
+                            [Publisher]
+                        </a>
 
+                        <a href="papers/example-paper-3.pdf"
+                           target="_blank">
 
-        <article class="project">
+                            <span class="download-icon">
+                                ↓
+                            </span>
 
-          <div class="project-number">
-            03
-          </div>
+                            [PDF]
 
-          <div>
+                        </a>
 
-            <h3>
-              [Terzo progetto]
-            </h3>
+                        <button
+                            class="abstract-button"
+                            onclick="toggleAbstract('abstract3')">
 
-            <p>
-              Breve descrizione del progetto.
-            </p>
+                            [Show Abstract]
 
-          </div>
+                        </button>
 
-        </article>
+                    </div>
 
 
-      </div>
+                    <div id="abstract3" class="abstract">
 
-    </div>
+                        <strong>Abstract.</strong>
 
-  </section>
+                        A reduced-order modelling framework is
+                        introduced for the efficient prediction of
+                        unsteady aerodynamic flows. The proposed
+                        approach combines data-driven techniques
+                        with classical physical modelling and is
+                        demonstrated on several benchmark problems.
 
+                    </div>
 
-  <!-- =========================
-       EXPERIENCE
-  ========================= -->
+                </article>
 
-  <section>
 
-    <div class="container section-grid">
+            </div>
 
-      <div>
-        <h2 class="section-title">Experience</h2>
-        <div class="section-label">Academic background</div>
-      </div>
 
-      <div class="content">
 
+            <!-- =============================================
+                 OTHER
+            ============================================== -->
 
-        <div class="experience">
+            <div class="publication-category">
 
-          <div class="experience-header">
+                <h3 class="category-title">
+                    Other
+                </h3>
 
-            <h3>
-              [PhD / Posizione]
-            </h3>
 
-            <span class="experience-date">
-              2024 — Present
-            </span>
+                <!-- PUBLICATION 4 -->
 
-          </div>
+                <article class="publication">
 
-          <p>
-            [Università], [Dipartimento]
-          </p>
+                    <h4 class="publication-title">
+                        Numerical Methods for Fluid Dynamics:
+                        A Practical Introduction
+                    </h4>
 
-        </div>
+                    <p class="publication-authors">
+                        Nome Cognome
+                    </p>
 
+                    <p class="publication-journal">
+                        Conference Proceedings, 2024
+                    </p>
 
-        <div class="experience">
 
-          <div class="experience-header">
+                    <div class="publication-links">
 
-            <h3>
-              [Master's Degree]
-            </h3>
+                        <a href="#">
+                            [Publisher]
+                        </a>
 
-            <span class="experience-date">
-              2022 — 2024
-            </span>
+                        <a href="papers/example-paper-4.pdf"
+                           target="_blank">
 
-          </div>
+                            <span class="download-icon">
+                                ↓
+                            </span>
 
-          <p>
-            [Università], [Corso di laurea]
-          </p>
+                            [PDF]
 
-        </div>
+                        </a>
 
+                        <button
+                            class="abstract-button"
+                            onclick="toggleAbstract('abstract4')">
 
-        <div class="experience">
+                            [Show Abstract]
 
-          <div class="experience-header">
+                        </button>
 
-            <h3>
-              [Bachelor's Degree]
-            </h3>
+                    </div>
 
-            <span class="experience-date">
-              2019 — 2022
-            </span>
 
-          </div>
+                    <div id="abstract4" class="abstract">
 
-          <p>
-            [Università], [Corso di laurea]
-          </p>
+                        <strong>Abstract.</strong>
 
-        </div>
+                        This contribution provides an overview of
+                        numerical techniques commonly employed in
+                        computational fluid dynamics, with particular
+                        emphasis on discretisation methods, stability,
+                        convergence, and practical implementation.
 
+                    </div>
 
-      </div>
+                </article>
 
-    </div>
 
-  </section>
+            </div>
 
+        </section>
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
 
-  <section id="contact">
 
-    <div class="container section-grid">
+        <!-- =================================================
+             CONTACT
+        ================================================= -->
 
-      <div>
-        <h2 class="section-title">Contact</h2>
-        <div class="section-label">Get in touch</div>
-      </div>
+        <section id="contact" class="section">
 
-      <div class="content">
+            <h2 class="section-title">
+                Contacts
+            </h2>
 
-        <p>
-          Per collaborazioni, domande sulla ricerca o
-          opportunità accademiche, puoi contattarmi tramite
-          email o attraverso i miei profili.
-        </p>
 
-        <div class="contact-list">
+            <div class="contact-content">
 
-          <a
-            class="contact-link"
-            href="mailto:nome@universita.it">
-            Email
-          </a>
+                <p>
+                    For questions, collaborations, or academic
+                    inquiries, please feel free to contact me.
+                </p>
 
-          <a
-            class="contact-link"
-            href="#"
-            target="_blank">
-            Google Scholar
-          </a>
 
-          <a
-            class="contact-link"
-            href="#"
-            target="_blank">
-            ORCID
-          </a>
+                <ul class="contact-list">
 
-          <a
-            class="contact-link"
-            href="#"
-            target="_blank">
-            GitHub
-          </a>
+                    <li>
+                        <strong>Email:</strong>
+                        <a href="mailto:name@example.com">
+                            name@example.com
+                        </a>
+                    </li>
 
-          <a
-            class="contact-link"
-            href="#"
-            target="_blank">
-            LinkedIn
-          </a>
+                    <li>
+                        <strong>ORCID:</strong>
+                        <a href="#">
+                            0000-0000-0000-0000
+                        </a>
+                    </li>
 
-        </div>
+                    <li>
+                        <strong>Google Scholar:</strong>
+                        <a href="#">
+                            Google Scholar profile
+                        </a>
+                    </li>
 
-      </div>
+                    <li>
+                        <strong>GitHub:</strong>
+                        <a href="#">
+                            github.com/username
+                        </a>
+                    </li>
 
-    </div>
+                </ul>
 
-  </section>
+            </div>
 
+        </section>
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
 
-  <footer>
+    </main>
 
-    <div class="container">
 
-      <span>
-        © 2026 [Nome Cognome]
-      </span>
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
 
-      <span>
-        Academic Website
-      </span>
+    <footer>
 
-    </div>
+        © 2026 Nome Cognome
 
-  </footer>
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        function toggleAbstract(id) {
+
+            const abstract = document.getElementById(id);
+
+            abstract.classList.toggle("open");
+
+        }
+
+    </script>
 
 
 </body>
+
 </html>
+```
