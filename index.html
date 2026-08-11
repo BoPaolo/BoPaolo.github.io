@@ -68,7 +68,7 @@
             height: 100%;
 
             margin: auto;
-            padding: 0 30px;
+            padding: 0 0px;
 
             display: flex;
             align-items: center;
@@ -85,11 +85,11 @@
         .navigation {
             display: flex;
 
-            gap: 32px;
+            gap: 2px;
 
             list-style: none;
 
-            font-size: 13px;
+            font-size: 1px;
         }
 
         .navigation a {
@@ -766,47 +766,45 @@
 
 
         <!-- =================================================
-             2025
+             2026
         ================================================= -->
 
         <h4 class="year">
-            2025
+            2026
         </h4>
-
-
-        <!-- PAPER [3] -->
+        <!-- PAPER [4] -->
 
         <article class="publication">
 
             <div class="publication-number">
-                [3]
+                [4]
             </div>
 
             <div class="publication-content">
 
                 <h4 class="publication-title">
-                    Experimental and Numerical Analysis of
-                    Vortex Formation in Confined Flows
+                    Pressure drop-flow rate nonlinearity in bubble trains through a capillary bundle
                 </h4>
 
                 <p class="publication-authors">
-                    Nome Cognome, C. Author, D. Researcher
+                    <u>P. Botticini</u>, D. Picchi, S. Sinha, A. Hansen
                 </p>
 
                 <p class="publication-venue">
-                    Journal of Computational Physics, 2025
+                    <em>Physical Review Fluids</em>,
+                    <strong>11</strong>(7) (2026)
                 </p>
 
 
                 <div class="publication-links">
 
-                    <a href="#"
+                    <a href="https://journals.aps.org/prfluids/abstract/10.1103/7z3l-zpzy"
                        target="_blank">
                         [Publisher]
                     </a>
 
 
-                    <a href="papers/paper-03.pdf"
+                    <a href="pressure-drop-flow-rate-nonlinearity.pdf"
                        target="_blank">
 
                         <span class="download-icon">
@@ -816,12 +814,6 @@
                         [PDF]
 
                     </a>
-
-
-                    <!--
-                    Questo paper NON ha un video,
-                    quindi non mettiamo [Video].
-                    -->
 
 
                     <button
@@ -841,13 +833,103 @@
                         Abstract.
                     </span>
 
-                    This paper presents a combined experimental
-                    and numerical investigation of vortex
-                    formation in confined flows. Particular
-                    attention is given to the dependence of
-                    vortex dynamics on Reynolds number and
-                    geometric confinement.
+                    We investigate the effective rheology of a train of elongated bubbles of negligible viscosity flowing in capillary tubes. 
+                    Building upon the classical Bretherton theory for a single bubble, we extend the analysis to a train of bubbles in a single 
+                    capillary tube and finally to an array of parallel, noninteracting capillary tubes, i.e., a capillary bundle. Our goal is to 
+                    characterize the nonlinear pressure drop-flow rate relation of this simplified two-phase system by incorporating the thin-film 
+                    hydrodynamics at small capillary numbers. We model the structural heterogeneity of the bundle by assuming that the tube radii 
+                    follow a truncated power-law distribution and examine deviations of the system from the Darcy law in terms of both its statistical 
+                    properties and the parameters characterizing the bubble train (i.e., the tube slenderness ratio, the volume fraction, and the number 
+                    of bubbles). The main result is that two-phase flow alters the effective rheology, leading to deviations from Darcy-type behavior 
+                    across the entire parameter space investigated. Specifically, for a limited number of bubbles, the flow exhibits a smooth transition 
+                    from the Bretherton regime, where the pressure drop scales with the flow rate to the power of 2/3, to weaker sublinear regimes 
+                    with exponents between 2/3 and unity. Interestingly, increasing the number of bubbles or narrowing the pore-size distribution leads 
+                    to only minor deviations from the Bretherton regime. The resulting pressure drop-flow rate exponents are qualitatively similar to 
+                    those reported in the literature for immiscible two-phase flow in porous media, despite the inherent simplicity of the capillary bundle model.
+                </div>
 
+            </div>
+
+        </article>
+
+        
+
+        <!-- PAPER [3] -->
+
+        <article class="publication">
+
+            <div class="publication-number">
+                [3]
+            </div>
+
+            <div class="publication-content">
+
+                <h4 class="publication-title">
+                    Convective heat transfer in the thin film of an elongated bubble in the absence of phase change
+                </h4>
+
+                <p class="publication-authors">
+                    <u>P. Botticini</u>, D. Picchi, P. Poesio
+                </p>
+
+                <p class="publication-venue">
+                    <em>Physical Review Fluids</em>,
+                    <strong>11</strong>(6) (2026)
+                </p>
+
+
+                <div class="publication-links">
+
+                    <a href="https://journals.aps.org/prfluids/abstract/10.1103/tf8n-pmmb"
+                       target="_blank">
+                        [Publisher]
+                    </a>
+
+
+                    <a href="convective-heat-transfer-in-the-thin-film.pdf"
+                       target="_blank">
+
+                        <span class="download-icon">
+                            ↓
+                        </span>
+
+                        [PDF]
+
+                    </a>
+
+
+                    <button
+                        class="abstract-toggle"
+                        onclick="toggleAbstract(this)">
+
+                        [Show Abstract]
+
+                    </button>
+
+                </div>
+
+
+                <div class="abstract">
+
+                    <span class="abstract-label">
+                        Abstract.
+                    </span>
+
+                    The injection of an elongated bubble into a microchannel is a well-established strategy for enhancing 
+                    convective heat transfer, with applications ranging from electronics cooling to miniaturized heat exchangers. 
+                    So far, a rigorous characterization of the heat removal capabilities of elongated bubbles (also known as Bretherton's 
+                    or Taylor's bubbles) is still lacking. To address this gap, we investigate the forced convection problem in the thin 
+                    film formed by an elongated bubble under uniform wall heat flux, examining the competition between advection, diffusion, 
+                    viscous dissipation, and an imposed heat flux at the channel walls. By means of two-scale asymptotic analysis, we derive 
+                    a one-dimensional advection-diffusion–heat-transfer equation with shape-dependent effective coefficients. This model 
+                    generalizes the classical Graetz problem to capillary-driven flows and extends the Aris-Taylor dispersion to the case 
+                    of an elongated bubble, clarifying the interplay between the imposed heat flux and the recirculating flow patterns at 
+                    both front and rear menisci. Interestingly, the model recovers the Péclet-squared scaling of the effective diffusion 
+                    coefficient and can be used to determine the heat transfer coefficient in the film region. In fact, we derive a closed-form 
+                    scaling law for the Nusselt number, revealing the influence of the problem parameters (i.e., the bubble profile and the axial 
+                    temperature gradient) and the dimensionless groups (Péclet, Brinkman, and capillary numbers) on forced convection. 
+                    Grounded in first principles, our analysis contributes to a deeper understanding of capillary-driven forced convection in 
+                    confined environments.
                 </div>
 
             </div>
