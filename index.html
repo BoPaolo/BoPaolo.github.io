@@ -351,7 +351,7 @@
 
         .publication-links {
             display: flex;
-
+            flex-wrap: wrap;
             align-items: center;
 
             gap: 16px;
@@ -361,7 +361,9 @@
 
         .publication-links a,
         .abstract-toggle {
-
+            flex-basis: 100%;
+            display: block;
+            
             border: none;
 
             background: none;
@@ -751,8 +753,6 @@
                      alt="arXiv"
                      class="arxiv-icon">
                     </a>
-
-                    <br>
                     
 
                     <button
