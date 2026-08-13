@@ -400,18 +400,18 @@
     text-decoration: none;
 }
 
-.abstract-toggle:hover {
-    color: #000;
-}
 
-.abstract-toggle:hover span {
+.publication-links a:hover {
+    color: #000;
     text-decoration: underline;
 }
 
-.publication-links a:hover,
 .abstract-toggle:hover {
     color: #000;
+    text-decoration: none;
+}
 
+.abstract-toggle:hover span {
     text-decoration: underline;
 }
 
@@ -785,11 +785,12 @@
                      </div>
 
                     <button
-                    class="abstract-toggle"
-                    onclick="toggleAbstract(this)">
-                
-                    <i class="fa-solid fa-eye"></i>Show Abstract
-                
+                        class="abstract-toggle"
+                        onclick="toggleAbstract(this)">
+                    
+                        <i class="fa-solid fa-eye"></i>
+                        <span>Show Abstract</span>
+                    
                     </button>
 
 
@@ -1236,20 +1237,20 @@
             abstract.classList.contains("visible");
 
 
-            if (isOpen) {
-    
-        abstract.classList.remove("visible");
-    
-        button.innerHTML =
-            '<i class="fa-solid fa-eye"></i> <span>Show Abstract</span>';
-    
+           if (isOpen) {
+
+            abstract.classList.remove("visible");
+        
+            button.innerHTML =
+                '<i class="fa-solid fa-eye"></i> <span>Show Abstract</span>';
+        
         } else {
-    
-        abstract.classList.add("visible");
-    
-        button.innerHTML =
-            '<i class="fa-solid fa-eye-slash"></i> <span>Hide Abstract</span>';
-    
+        
+            abstract.classList.add("visible");
+        
+            button.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i> <span>Hide Abstract</span>';
+        
         }
 
     }
