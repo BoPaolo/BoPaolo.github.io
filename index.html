@@ -756,9 +756,9 @@
                     <button
                         class="abstract-toggle"
                         onclick="toggleAbstract(this)">
-
-                        [Show Abstract]
-
+                    
+                        <i class="fa-solid fa-eye"></i> Show Abstract
+                    
                     </button>
 
                 </div>
@@ -1192,38 +1192,38 @@
          JAVASCRIPT
     ===================================================== -->
 
-    <script>
+   <script>
 
-        function toggleAbstract(button) {
+    function toggleAbstract(button) {
 
-            const abstract =
-                button
-                .closest(".publication")
-                .querySelector(".abstract");
+        const abstract =
+            button
+            .closest(".publication")
+            .querySelector(".abstract");
 
-            const isOpen =
-                abstract.classList.contains("visible");
+        const isOpen =
+            abstract.classList.contains("visible");
 
 
-            if (isOpen) {
+        if (isOpen) {
 
-                abstract.classList.remove("visible");
+            abstract.classList.remove("visible");
 
-                button.textContent =
-                    "[Show Abstract]";
+            button.innerHTML =
+                '<i class="fa-solid fa-eye"></i> Show Abstract';
 
-            } else {
+        } else {
 
-                abstract.classList.add("visible");
+            abstract.classList.add("visible");
 
-                button.textContent =
-                    "[Hide Abstract]";
-
-            }
+            button.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i> Hide Abstract';
 
         }
 
-    </script>
+    }
+
+</script>
 
 
 </body>
